@@ -1,10 +1,13 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Button } from "react-native";
 import { theme } from "@/theme"
 
 export default function OnboardingScreen() {
+    const handlePress = () => {
+
+    }
     return(
         <View style={styles.container}>
-            <Text style={styles.text}>Onboarding</Text>
+            <Button title="Let me in!" onPress={handlePress}/>
         </View>
     );
 }
