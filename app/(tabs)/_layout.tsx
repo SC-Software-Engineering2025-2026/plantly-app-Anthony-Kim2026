@@ -1,7 +1,7 @@
 import { Redirect, Tabs } from "expo-router";
 import Entypo from "@expo/vector-icons/Entypo";
 import Feather from "@expo/vector-icons/Feather";
-import { theme } from "../theme";
+import { theme } from "@/theme";
 import { Text } from "react-native";
 import { useUserStore } from "@/store/userStore";
 
@@ -9,7 +9,7 @@ const hasFinishedOnboarding = true;
 
 export default function Layout() {
   const hasFinishedOnboarding = useUserStore(
-    state => state.hasFinishedOnboarding,
+    (state) => state.hasFinishedOnboarding,
 
   );
   if (!hasFinishedOnboarding) {
