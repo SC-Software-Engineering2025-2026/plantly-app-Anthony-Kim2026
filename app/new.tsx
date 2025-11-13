@@ -19,7 +19,7 @@ export default function NewScreen() {
   const [imageUri, setImageUri] = useState<string>();
   const [name, setName] = useState<string>();
   const [days, setDays] = useState<string>();
-  const addPlant = usePlantStore(state => state.addPlant);
+  const addPlant = usePlantStore((state) => state.addPlant);
   const router = useRouter();
 
   const handleSubmit = () => {
@@ -50,7 +50,6 @@ export default function NewScreen() {
       return;
     }
 
-
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
@@ -69,12 +68,12 @@ export default function NewScreen() {
       contentContainerStyle={styles.contentContainer}
       keyboardShouldPersistTaps="handled"
     >
-
-      <TouchableOpacity 
-        style={styles.centered} 
-        activeOpacity={0.8} 
-        onPress={handleChooseImage}>
-        <PlantlyImage imageUri={imageUri}/>
+      <TouchableOpacity
+        style={styles.centered}
+        activeOpacity={0.8}
+        onPress={handleChooseImage}
+      >
+        <PlantlyImage imageUri={imageUri} />
       </TouchableOpacity>
       <Text style={styles.label}>Name</Text>
       <TextInput
