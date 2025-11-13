@@ -16,6 +16,7 @@ import { useRouter } from "expo-router";
 import * as ImagePicker from "expo-image-picker";
 
 export default function NewScreen() {
+  const [imageUri, setImageUri] = useState<string>();
   const [name, setName] = useState<string>();
   const [days, setDays] = useState<string>();
   const addPlant = usePlantStore(state => state.addPlant);
@@ -54,7 +55,12 @@ export default function NewScreen() {
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       aspect: [1, 1],
-    })
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setImageUri(result.assets[0].uri);
+    }
   };
 
   return (
@@ -68,7 +74,7 @@ export default function NewScreen() {
         style={styles.centered} 
         activeOpacity={0.8} 
         onPress={handleChooseImage}>
-        <PlantlyImage />
+        <PlantlyImage imageUri={imageUri}/>
       </TouchableOpacity>
       <Text style={styles.label}>Name</Text>
       <TextInput
@@ -115,5 +121,6 @@ const styles = StyleSheet.create({
   },
   centered: {
     alignItems: "center",
+    marginBottom: 24,
   },
 });
