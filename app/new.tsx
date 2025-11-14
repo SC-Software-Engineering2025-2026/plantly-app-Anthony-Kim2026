@@ -30,18 +30,18 @@ export default function NewScreen() {
     if (!days) {
       return Alert.alert(
         "Validation Error",
-        `How often does ${name} need to be watered?`,
+        `How often does ${name} need to be watered?`
       );
     }
 
     if (Number.isNaN(Number(days))) {
       return Alert.alert(
         "Validation Error",
-        "Watering frequency must be a be a number",
+        "Watering frequency must be a be a number"
       );
     }
 
-    addPlant(name, Number(days));
+    addPlant(name, Number(days), imageUri);
     router.navigate("/");
   };
 
@@ -75,6 +75,7 @@ export default function NewScreen() {
       >
         <PlantlyImage imageUri={imageUri} />
       </TouchableOpacity>
+
       <Text style={styles.label}>Name</Text>
       <TextInput
         value={name}
