@@ -28,7 +28,7 @@ export const usePlantStore = create(
     (set) => ({
       plants: [],
       nextId: 1,
-      addPlant: (
+      addPlant: async (
         name: string,
         wateringFrequencyDays: number,
         imageUri?: string

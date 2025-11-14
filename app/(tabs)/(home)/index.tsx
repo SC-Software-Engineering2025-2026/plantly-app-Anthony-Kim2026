@@ -1,10 +1,11 @@
-import { View, StyleSheet, Text, FlatList } from "react-native";
+import { StyleSheet, FlatList } from "react-native";
 import { theme } from "@/theme";
-import { StatusBar } from "expo-status-bar";
 import { usePlantStore } from "@/store/plantsStore";
 import { PlantCard } from "@/components/PlantCard";
 import { PlantlyButton } from "@/components/PlantlyButton";
 import { useRouter } from "expo-router";
+
+// app\(tabs)\(home)\index.tsx
 
 export default function App() {
   const router = useRouter();
