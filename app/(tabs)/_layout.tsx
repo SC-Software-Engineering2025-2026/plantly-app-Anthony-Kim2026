@@ -10,7 +10,7 @@ const hasFinishedOnboarding = true;
 
 export default function Layout() {
   const hasFinishedOnboarding = useUserStore(
-    (state) => state.hasFinishedOnboarding
+    (state) => state.hasFinishedOnboarding,
   );
   if (!hasFinishedOnboarding) {
     return <Redirect href="/onboarding" />;

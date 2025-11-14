@@ -16,7 +16,7 @@ export default function PlantDetails() {
   const params = useLocalSearchParams();
   const plantId = params.plantId;
   const plant = usePlantStore((state) =>
-    state.plants.find((plant) => String(plant.id) === plantId)
+    state.plants.find((plant) => String(plant.id) === plantId),
   );
   const navigation = useNavigation();
 
@@ -50,7 +50,7 @@ export default function PlantDetails() {
           style: "destructive",
         },
         { text: "Cancel", style: "cancel" },
-      ]
+      ],
     );
   };
 
