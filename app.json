@@ -30,8 +30,23 @@
     },
     "plugins": [
       "expo-router",
-      "expo-font",
-      "expo-quick-actions"
-    ]
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "node_modules/@expo-google-fonts/caveat/Caveat_400Regular.ttf"
+          ]
+        }
+      ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "555ab7c9-608a-4b36-a6c1-27a150016509"
+      }
+    },
+    "owner": "expokadi"
   }
 }
